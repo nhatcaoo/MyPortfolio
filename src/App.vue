@@ -1,26 +1,35 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+
+  <div id = 'app'>
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Sudoku />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import HelloWorld from './components/HelloWorld.vue';
+import Sudoku from './components/Sudoku'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    Sudoku,
   }
 }
 </script>
 
 <style>
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    color:white;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+ 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: block;
+
 }
 </style>

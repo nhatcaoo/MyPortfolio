@@ -1,164 +1,11 @@
-<template>
-  <div class="big-container">
-    <div class="container">
-      <div class="header">
-        <div class="menu">
-          <div id="logo">Portfolio</div>
-          <div id="tab">
-            <a>About</a>
-            <a>Product</a>
-            <a>Contact</a>
-          </div>
-        </div>
-        <div class="content">
-          <div class="hello"><a>Hello, I am</a></div>
-          <div class="name"><a>Nhat Cao</a></div>
-          <div class="des"><a>A young Blockchain developer</a></div>
-        </div>
-        <div class="hire-me-info">
-          <a>Find me on</a>
-          <div class="social-logo">
-            <img src="../assets/insta.svg" />
-            <img src="../assets/linkedin.svg" />
-            <img src="../assets/freelancer-com-logo-2B5CE1A961-seeklogo.com.png" />
-            <img src="../assets/GitHub-Mark-Light-120px-plus.png" />
-          </div>
-        </div>
-        <div class="hire-me">
-          <div class="rectangle"></div>
-          <div class="hire-me-text">Hire Me</div>
-        </div>
-      </div>
-      <div class="body">
-        <div class="about-me">
-        
-          <div class="about-me-content">
-            <div class="about-me-title">
-              <hr />
-              <a>About me</a>
-            </div>
-            <div class="about-me-text">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat
-              </p>
-              <br /><br />
-              <p>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.
-              </p>
-            </div>
-            <div class="download-cv">
-              <div class="text">Download CV</div>
-            </div>
-          </div>
-          <div class="about-me-visual"></div>
-          <img style="z-index:1;" src="../assets/Group82.svg" />
-        </div>
-        <div class="my-works">
-          <div class="title">
-            <hr />
-            <a>My works</a>
-          </div>
-          <div class="works">
-              <img src="../assets/v1.png">
-              <img src="../assets/v1.png">
-              <img src="../assets/v1.png">
-          </div>
-          <div class="ne-pre">
-            <a href="#" class="previous round">&#8249;</a>
-            <a href="#" class="next round">&#8250;</a>
-          </div>
-        </div>
-        <div class="capabilities">
-          <div class="title">
-            <a>My Capabilities</a>
-            <hr />
-          </div>
-          <div class="capabilities-des">
-          <a>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-             sed do eiusmod tempor incididunt ut labore et t enim ad minim veniam, quis nostrud exercitation.</a>
-            </div>
-             <div class="skills">
-              <div class="line1">
-               <div id = skill>
-                <img src="../assets/spring-seeklogo.com.svg">  
-                <div class="skill-title">
-                    <a>Java Spring</a>
-                  </div>
-                  <div class="skill-des">
-                      <a>Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
-                  </div>
-               </div>
-               <div id ="skill" >
-                <img src="../assets/spring-seeklogo.com.svg">  
-                <div class="skill-title">
-                    <a>Java Spring</a>
-                  </div>
-                  <div class="skill-des">
-                      <a>Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
-                  </div>
-               </div>
-               <div id = skill>
-                <img src="../assets/spring-seeklogo.com.svg">  
-                <div class="skill-title">
-                    <a>Java Spring</a>
-                  </div>
-                  <div class="skill-des">
-                      <a>Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
-                  </div>
-               </div>
-              </div>
-              <div class="line2">
-                <div id = skill>
-                  <img src="../assets/spring-seeklogo.com.svg">  
-                  <div class="skill-title">
-                      <a>Java Spring</a>
-                    </div>
-                    <div class="skill-des">
-                        <a>Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
-                    </div>
-                 </div>
-                 <div id ="skill" >
-                  <img src="../assets/spring-seeklogo.com.svg">  
-                  <div class="skill-title">
-                      <a>Java Spring</a>
-                    </div>
-                    <div class="skill-des">
-                        <a>Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
-                    </div>
-                 </div>
-                 <div id = skill>
-                  <img src="../assets/spring-seeklogo.com.svg">  
-                  <div class="skill-title">
-                      <a>Java Spring</a>
-                    </div>
-                    <div class="skill-des">
-                        <a>Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
-                    </div>
-                 </div>
-              </div>
-             </div>
-        </div>
-        </div>
-      </div>
-    </div>
-</template>
-
-<script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    color:white;
+  
+    
 }
-</script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
 .big-container{
     width: 100%;
 }
@@ -202,7 +49,7 @@ export default {
     margin-left: 62px;
     font-family: Freestyle Script;
     color: #FFFFFF;
-    font-size: 80px;
+    font-size: 80;
 }
 .header{
     width: 100%;
@@ -210,7 +57,7 @@ export default {
     position: relative;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url("../assets/cover-background.png");
+    background-image: url("assets/cover-background.png");
 }
 .content{
     color: white;
@@ -219,8 +66,6 @@ export default {
     position: absolute;
     width: 722px;
     margin: 264 0 0 60px;
-    margin-top: 248px;
-    margin-left: 60px;
 }
 .hire-me-info{
     justify-content: space-between;
@@ -230,8 +75,6 @@ export default {
     position: absolute;
     width: 722px;
     margin: 592 0 0 60px;
-     margin-top: 560px;
-    margin-left: 60px;
 }
 
 .social-logo{
@@ -242,7 +85,7 @@ export default {
 .social-logo img{
     
     width: auto !important;
-    height: 32px !important;
+    height: 48px !important;
     padding-right: 32px;
 
 }
@@ -260,8 +103,6 @@ export default {
     position: absolute;
     width: 722px;
     margin: 772 0 0 60px;
-     margin-top: 722px;
-    margin-left: 60px;
     height: 72px;
     z-index: 100;
     left: 0;
@@ -298,7 +139,7 @@ export default {
   letter-spacing: 0px;
   line-height: 41px;
   text-align: left;
-  font-size: 32px;
+  font-size: 36px;
   white-space: nowrap;
 }
 .name{
@@ -320,7 +161,7 @@ export default {
     letter-spacing: 0px;
     line-height: 41px;
     text-align: left;
-    font-size: 20px;
+    font-size: 24px;
     white-space: nowrap;
   }
 .cover{
@@ -355,9 +196,9 @@ export default {
     position: absolute;
 }
 .about-me-title{
-    padding-left: 72px;
+    padding-left: 96px;
     padding-top: 72px;
-    font-size: 48px;
+    font-size: 48;
     margin-bottom: 64px;
     font-weight: 680;
 }
@@ -367,12 +208,12 @@ export default {
     width: 48%;
 }
 .about-me-content p{
-    padding-left: 72px;
+    padding-left: 96px;
     line-height: 48px;
     padding-right: 4%;
     text-align: left;
     font-weight: 320;
-    font-size: 19.2px;
+    font-size: 19.2;
 }
 .about-me hr {
     display: block;
@@ -382,8 +223,6 @@ export default {
     border: 0;
     border-top: 2px solid #FF0513;
     margin: 0.8em 0 0 28%;
-     margin-top: 0.8em;
-    margin-left: 28%;
     width: 480px;
     margin-right: 1px;
 }
@@ -405,7 +244,7 @@ export default {
     width: 722px;
     border-radius: 53px;
     margin-top: 4%;
-    margin-left: 72px;
+    margin-left: 6%;
     width: 40%;
     height: 72px;
     z-index: 100;
@@ -450,7 +289,7 @@ export default {
 .my-works .title{
     padding-left: 72px;
     padding-top: 72px;
-    font-size: 40px;
+    font-size: 40;
     margin-bottom: 64px;
     font-weight: 320;
 }
@@ -462,8 +301,6 @@ export default {
     border: 0;
     border-top: 2px solid #FF0513;
     margin: 0.8em 0 0 12%;
-     margin-top: 0.8em;
-    margin-left: 13%;
     width: 280px;
     margin-right: 1px;
 }
@@ -493,7 +330,7 @@ export default {
     border: 1px solid white;
     text-decoration: none;
     text-align: center;
-    font-size: 48px;
+    font-size: 48;
     font-weight: 256;
     vertical-align: middle;
     display: inline-block;
@@ -532,7 +369,7 @@ export default {
   .capabilities .title{
     padding-top: 6% ;
     text-align: center;
-    font-size: 48px;
+    font-size: 48;
     margin-bottom: 2%;
     font-weight: 560;
   }
@@ -555,7 +392,7 @@ export default {
     margin-right: auto;
 }
 .capabilities .capabilities-des a{
-    font-size: 23.2px;
+    font-size: 23.2;
     font-weight: 280;
 }
 .line1{
@@ -592,7 +429,7 @@ export default {
 }
 .skills .skill-title{
     margin-top: 4%;
-    font-size: 28px;
+    font-size: 28;
     font-weight: 400;
 }
 .skills .skill-des {
@@ -600,4 +437,3 @@ export default {
     overflow: hidden;
     width: 20rem;
 }
-</style>
