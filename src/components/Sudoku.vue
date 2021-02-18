@@ -9,6 +9,8 @@
             :class="{
               'border-right': colIndex === 2 || colIndex === 5,
               'border-bottom': rowIndex === 2 || rowIndex === 5,
+              'border-upper-disable': rowIndex === 3 || rowIndex === 6,
+              'border-left-disable': colIndex === 3 || colIndex === 6,
               original: cell.original,
               active: activeRow === rowIndex && activeCol === colIndex,
               'invalid' : isCellInvalid(cell.value, rowIndex, colIndex)
@@ -39,6 +41,11 @@
         {{ value }}
       </button>
     </div>
+    <div class="delete-button">
+      <button type="button" class="btn-del" :disabled="activeRow === -1 || activeCol === -1" @click="setCellValue(null)">
+        X
+      </button>
+    </div>
     </div>
   </div>
 </template>
@@ -54,6 +61,7 @@ export default {
   data() {
     return {
       nums: [[1,2,3],[4,5,6],[7,8,9]],
+      matrix: [[1,1],[1,4],[1,7],[4,1],[4,4],[4,7],[7,1],[7,4],[7,7]],
       puzzle: [],
       difficulty: "easy",
       activeRow: -1,
@@ -61,8 +69,8 @@ export default {
     };
   },
   mounted() {
-
     this.generatePuzzle();
+   
   },
   methods: {
 
@@ -77,6 +85,7 @@ export default {
           };
         });
       });
+   
     },
     setCellActive(row, col, original) {
       if (original) {
@@ -106,8 +115,30 @@ export default {
                 if(this.puzzle[i][col].value===value && i!==row){
                     return true;
                 }
-        }        
+        }    
+        let areaMidPoint = this.getAreaCoverPoint(row,col)  
+        let areaMidPointRow = areaMidPoint[0] 
+        let areaMidPointCol = areaMidPoint[1]
+        for(let i=-1; i<=1; i++)
+          for(let j=-1; j<=1; j++){
+            if(this.puzzle[areaMidPointRow+i][areaMidPointCol+j].value === value && !(areaMidPointRow+i===row && areaMidPointCol+j===col))
+            {
+                return true;
+            }
+        }
+
         return false
+    },
+    getAreaCoverPoint(row, col){
+        for(let i=0; i<this.matrix.length; i++){
+            if(Math.pow(row-this.matrix[i][0],2) + Math.pow(col-this.matrix[i][1],2)<=2)
+            {
+              return this.matrix[i]
+            }
+        }
+    },
+    checkWin(){
+      
     }
   },
 };
@@ -116,10 +147,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .container {
-  height: 750px;
+  height: 800px;
   background: #040221;
   display: flex;
-  padding-top:120px;
+  padding-top:160px;
 }
 .sudoku {
   color: rgb(0, 0, 0);
@@ -128,7 +159,7 @@ export default {
   margin: 0rem auto;
 }
 .grid {
-  width: calc(9 * 60px);
+  width: calc(9 * 72px);
   border: 6px solid white;
   margin: 2rem auto;
 }
@@ -149,10 +180,22 @@ export default {
   margin: auto auto;
   justify-content: space-between;
 }
+.btn-del{
+  margin-top: 8px;
+   width: calc(9 * 20px);
+    font-weight: bold;
+    font-size: 24px;
+  color: white;
+  background-color: rgb(158, 158, 158);
+   height: 48px;
+}
 .btn {
   width: 60px;
   height: 60px;
-  font-size: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(158, 158, 158);
   cursor: pointer;
 }
 .btn:disabled {
@@ -160,12 +203,14 @@ export default {
 }
 .cell {
   display: block;
-  width: 60px;
-  height: 60px;
+  width: 72px;
+  height: 72px;
   box-sizing: border-box;
-  border: 0.01px solid rgb(155, 155, 155);;
-  font-size: 24px;
-  line-height: 60px;
+  z-index: 1;
+  border: 0.001px solid  #959595 ;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 72px;
   text-align: center;
   cursor: default;
   color: #040221;
@@ -174,12 +219,23 @@ export default {
     color: red;
 }
 .cell.border-right {
+   z-index: 100;
   border-right-width: 6px;
-  border-right-color: rgb(78, 78, 78);
+  border-right-color: #959595;
+  border-right-style: solid;
+}
+.cell.border-upper-disable{
+  border-top-style: unset;
+  
+}
+.cell.border-left-disable{
+  border-left-style: unset;
 }
 .cell.border-bottom {
+   z-index: 100;
   border-bottom-width: 6px;
-  border-bottom-color: rgb(78, 78, 78);
+  border-bottom-color: #959595;
+  border-bottom-style: solid;
 }
 .cell.original {
   font-weight: 300px;

@@ -9,6 +9,7 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue';
 import Sudoku from './components/Sudoku'
+
 export default {
   name: 'App',
   components: {
@@ -19,6 +20,7 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -26,7 +28,7 @@ export default {
     color:white;
 }
 #app {
- 
+   font-family: Poppins;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: block;

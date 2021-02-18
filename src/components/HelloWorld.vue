@@ -13,7 +13,7 @@
         <div class="content">
           <div class="hello"><a>Hello, I am</a></div>
           <div class="name"><a>Nhat Cao</a></div>
-          <div class="des"><a>A young Blockchain developer</a></div>
+          <div class="des"><a> Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></div>
         </div>
         <div class="hire-me-info">
           <a>Find me on</a>
@@ -208,7 +208,7 @@ export default {
     width: 100%;
     height: 1016px;
     position: relative;
-    background-size: contain;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-image: url("../assets/cover-background.png");
 }
