@@ -13,8 +13,7 @@
               'border-left-disable': colIndex === 3 || colIndex === 6,
               original: cell.original,
               active: activeRow === rowIndex && activeCol === colIndex,
-              'invalid' : isCellInvalid(cell.value, rowIndex, colIndex)
-
+              invalid: isCellInvalid(cell.value, rowIndex, colIndex),
             }"
             v-for="(cell, colIndex) in row"
             :key="colIndex"
@@ -26,26 +25,34 @@
       </div>
     </div>
     <div class="buttons">
-    <div class="button-row"
-     v-for="i in 3"
-        :key="i"
-    >
-      <button
-        type="button"
-        class="btn"
-        v-for="value in nums[i-1]"
-        :key="value"
-        :disabled="activeRow === -1 || activeCol === -1"
-        @click="setCellValue(value)"
-      >
-        {{ value }}
-      </button>
-    </div>
-    <div class="delete-button">
-      <button type="button" class="btn-del" :disabled="activeRow === -1 || activeCol === -1" @click="setCellValue(null)">
-        X
-      </button>
-    </div>
+      <div class="new-game" type="button">
+        New game
+      </div>
+      <div class="counting">
+
+      </div>
+      <div class="button-row" v-for="i in 3" :key="i">
+        <button
+          type="button"
+          class="btn"
+          v-for="value in nums[i - 1]"
+          :key="value"
+          :disabled="activeRow === -1 || activeCol === -1"
+          @click="setCellValue(value)"
+        >
+          {{ value }}
+        </button>
+      </div>
+      <div class="delete-button">
+        <button
+          type="button"
+          class="btn-del"
+          :disabled="activeRow === -1 || activeCol === -1"
+          @click="setCellValue(null)"
+        >
+          X
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -60,8 +67,22 @@ export default {
   },
   data() {
     return {
-      nums: [[1,2,3],[4,5,6],[7,8,9]],
-      matrix: [[1,1],[1,4],[1,7],[4,1],[4,4],[4,7],[7,1],[7,4],[7,7]],
+      nums: [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ],
+      matrix: [
+        [1, 1],
+        [1, 4],
+        [1, 7],
+        [4, 1],
+        [4, 4],
+        [4, 7],
+        [7, 1],
+        [7, 4],
+        [7, 7],
+      ],
       puzzle: [],
       difficulty: "easy",
       activeRow: -1,
@@ -70,12 +91,9 @@ export default {
   },
   mounted() {
     this.generatePuzzle();
-   
   },
   methods: {
-
     generatePuzzle() {
-
       const boardString = sudoku.generate(this.difficulty);
       this.puzzle = sudoku.board_string_to_grid(boardString).map((row) => {
         return row.map((cell) => {
@@ -85,7 +103,6 @@ export default {
           };
         });
       });
-   
     },
     setCellActive(row, col, original) {
       if (original) {
@@ -104,42 +121,46 @@ export default {
       this.activeRow = -1;
       this.activeCol = -1;
     },
-    isCellInvalid(value, row, col){
-        if(!value) return true
-        for(let i=0; i<9; i++){
-                if(this.puzzle[row][i].value===value && i!==col){
-                    return true;
-                }
+    isCellInvalid(value, row, col) {
+      if (!value) return true;
+      for (let i = 0; i < 9; i++) {
+        if (this.puzzle[row][i].value === value && i !== col) {
+          return true;
         }
-        for(let i=0; i<9; i++){
-                if(this.puzzle[i][col].value===value && i!==row){
-                    return true;
-                }
-        }    
-        let areaMidPoint = this.getAreaCoverPoint(row,col)  
-        let areaMidPointRow = areaMidPoint[0] 
-        let areaMidPointCol = areaMidPoint[1]
-        for(let i=-1; i<=1; i++)
-          for(let j=-1; j<=1; j++){
-            if(this.puzzle[areaMidPointRow+i][areaMidPointCol+j].value === value && !(areaMidPointRow+i===row && areaMidPointCol+j===col))
-            {
-                return true;
-            }
+      }
+      for (let i = 0; i < 9; i++) {
+        if (this.puzzle[i][col].value === value && i !== row) {
+          return true;
+        }
+      }
+      let areaMidPoint = this.getAreaCoverPoint(row, col);
+      let areaMidPointRow = areaMidPoint[0];
+      let areaMidPointCol = areaMidPoint[1];
+      for (let i = -1; i <= 1; i++)
+        for (let j = -1; j <= 1; j++) {
+          if (
+            this.puzzle[areaMidPointRow + i][areaMidPointCol + j].value ===
+              value &&
+            !(areaMidPointRow + i === row && areaMidPointCol + j === col)
+          ) {
+            return true;
+          }
         }
 
-        return false
+      return false;
     },
-    getAreaCoverPoint(row, col){
-        for(let i=0; i<this.matrix.length; i++){
-            if(Math.pow(row-this.matrix[i][0],2) + Math.pow(col-this.matrix[i][1],2)<=2)
-            {
-              return this.matrix[i]
-            }
+    getAreaCoverPoint(row, col) {
+      for (let i = 0; i < this.matrix.length; i++) {
+        if (
+          Math.pow(row - this.matrix[i][0], 2) +
+            Math.pow(col - this.matrix[i][1], 2) <=
+          2
+        ) {
+          return this.matrix[i];
         }
+      }
     },
-    checkWin(){
-      
-    }
+    checkWin() {},
   },
 };
 </script>
@@ -150,7 +171,7 @@ export default {
   height: 800px;
   background: #040221;
   display: flex;
-  padding-top:160px;
+  padding-top: 160px;
 }
 .sudoku {
   color: rgb(0, 0, 0);
@@ -168,26 +189,66 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
-.button-row{
-    display: flex;
+.new-game {
+  margin: auto;
+  user-select:none;
+  margin-bottom: 8px;
+  width: 160px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #ff0513;
+  text-align: center;
+  pointer-events: auto;
+  outline: none;
+  font-size: 16px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  box-shadow: 0 0.2em #b1070f;
+  cursor: pointer;
+}
+.new-game:active {
+  box-shadow: none;
+  position: relative;
+  top: 0.2em;
+}
+
+.button-row {
+  display: flex;
   align-items: center;
 }
 .buttons {
-
-  width: calc(9 * 60px);
   display: block;
   align-items: center;
   margin: auto auto;
   justify-content: space-between;
 }
-.btn-del{
+.btn-del {
   margin-top: 8px;
-   width: calc(9 * 20px);
-    font-weight: bold;
-    font-size: 24px;
+  width: calc(9 * 20px);
+  font-weight: bold;
+  font-size: 24px;
   color: white;
   background-color: rgb(158, 158, 158);
-   height: 48px;
+  height: 48px;
+   background-color: rgb(158, 158, 158);
+  cursor: pointer;
+  text-align: center;
+  pointer-events: auto;
+  outline: none;
+  font-size: 16px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  box-shadow: 0 0.2em rgb(110, 110, 110);
+  cursor: pointer;
+}
+.btn-del:active{
+   box-shadow: none;
+  position: relative;
+  top: 0.2em;
 }
 .btn {
   width: 60px;
@@ -197,17 +258,33 @@ export default {
   color: white;
   background-color: rgb(158, 158, 158);
   cursor: pointer;
+  text-align: center;
+  pointer-events: auto;
+  outline: none;
+  font-size: 16px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  box-shadow: 0 0.2em rgb(110, 110, 110);
+  cursor: pointer;
+}
+.btn:active{
+  box-shadow: none;
+  position: relative;
+  top: 0.2em;
 }
 .btn:disabled {
   cursor: not-allowed;
 }
+
 .cell {
   display: block;
   width: 72px;
   height: 72px;
   box-sizing: border-box;
   z-index: 1;
-  border: 0.001px solid  #959595 ;
+  border: 0.001px solid #959595;
   font-size: 36px;
   font-weight: bold;
   line-height: 72px;
@@ -215,24 +292,23 @@ export default {
   cursor: default;
   color: #040221;
 }
-.cell.invalid{
-    color: red;
+.cell.invalid {
+  color: red;
 }
 .cell.border-right {
-   z-index: 100;
+  z-index: 100;
   border-right-width: 6px;
   border-right-color: #959595;
   border-right-style: solid;
 }
-.cell.border-upper-disable{
+.cell.border-upper-disable {
   border-top-style: unset;
-  
 }
-.cell.border-left-disable{
+.cell.border-left-disable {
   border-left-style: unset;
 }
 .cell.border-bottom {
-   z-index: 100;
+  z-index: 100;
   border-bottom-width: 6px;
   border-bottom-color: #959595;
   border-bottom-style: solid;
@@ -243,10 +319,9 @@ export default {
 }
 .cell:not(.original) {
   cursor: pointer;
-   background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 .cell.active {
   background-color: #ffda00;
 }
-
 </style>
