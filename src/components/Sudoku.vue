@@ -25,11 +25,29 @@
       </div>
     </div>
     <div class="buttons">
-      <div class="new-game" type="button">
+      <div class="new-game" type="button" @click="newGame()">
         New game
       </div>
       <div class="counting">
-
+       <div class="base-timer">
+    <svg
+      class="base-timer__svg"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g class="base-timer__circle">
+        <circle
+          class="base-timer__path-elapsed"
+          cx="50"
+          cy="50"
+          r="46.5"
+        />
+      </g>
+    </svg>
+    <span class="base-timer__label">
+      {{minutes}} : {{seconds}}
+    </span>
+  </div>
       </div>
       <div class="button-row" v-for="i in 3" :key="i">
         <button
@@ -64,9 +82,13 @@ export default {
 
   props: {
     msg: String,
+     date: {
+      type: String
+    }
   },
   data() {
     return {
+       now: Math.trunc((new Date()).getTime() / 1000),
       nums: [
         [1, 2, 3],
         [4, 5, 6],
@@ -84,15 +106,36 @@ export default {
         [7, 7],
       ],
       puzzle: [],
-      difficulty: "easy",
+      difficulty: "hard",
       activeRow: -1,
       activeCol: -1,
     };
   },
   mounted() {
     this.generatePuzzle();
+   window.setInterval(() => {
+     console.log(this.minutes)
+        this.now = Math.trunc((new Date()).getTime() / 1000);
+    },1000);
+    
   },
+   computed: {
+    dateInMilliseconds() {
+      return Math.trunc((new Date()).getTime() / 1000)
+      
+    },
+    seconds() {
+      return (this.now - this.dateInMilliseconds ) % 60;
+    },
+    minutes() {
+      return Math.trunc((this.now - this.dateInMilliseconds) / 60) % 60;
+    },
+   },
   methods: {
+    
+    newGame(){
+      this.generatePuzzle();
+    },
     generatePuzzle() {
       const boardString = sudoku.generate(this.difficulty);
       this.puzzle = sudoku.board_string_to_grid(boardString).map((row) => {
@@ -167,6 +210,34 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.base-timer {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin:auto; 
+  margin-top: 8px;
+  margin-bottom: 8px;
+  }
+/* Removes SVG styling that would hide the time label */
+  .base-timer__circle {
+    fill: none;
+    stroke: none;
+  }
+/* The SVG path that displays the timer's progress */
+  .base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke:grey;
+  }
+.base-timer__label {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
 .container {
   height: 800px;
   background: #040221;
