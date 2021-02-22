@@ -1,15 +1,17 @@
 <template>
 
   <div id = 'app'>
+
   <HelloWorld msg="Welcome to Your Vue.js App"/>
   <Sudoku />
   </div>
 </template>
-
 <script>
 import HelloWorld from './components/HelloWorld.vue';
-import Sudoku from './components/Sudoku'
-
+import Sudoku from './components/Sudoku';
+import AOS from "aos";
+import "aos/dist/aos.css"
+ AOS.init();
 export default {
   name: 'App',
   components: {

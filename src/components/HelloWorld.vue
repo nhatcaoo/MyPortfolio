@@ -1,7 +1,7 @@
 <template>
   <div class="big-container">
     <div class="container">
-      <div class="header">
+      <div  class="header">
         <div class="menu">
           <div id="logo">Portfolio</div>
           <div id="tab">
@@ -25,19 +25,20 @@
           </div>
         </div>
         <div class="hire-me">
-          <div class="rectangle"></div>
-          <div class="hire-me-text">Hire Me</div>
+          <Blob />
         </div>
       </div>
       <div class="body">
         <div class="about-me">
         
-          <div class="about-me-content">
-            <div class="about-me-title">
+          <div class="about-me-content"  >
+            <div class="about-me-title"   >
               <hr />
-              <a>About me</a>
+              <div data-aos="fade-up" data-aos-delay="50"   data-aos-duration="1000" data-aos-anchor-placement="center-center" data-aos-once="true">
+              <a >About me</a>
+              </div>
             </div>
-            <div class="about-me-text">
+            <div class="about-me-text"  data-aos="fade-up-right" data-aos-delay="100"   data-aos-duration="1000"   data-aos-anchor-placement="center-center" data-aos-once="true">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -50,22 +51,24 @@
                 cillum dolore eu fugiat nulla pariatur.
               </p>
             </div>
-            <div class="download-cv">
+            <div class="download-cv"  data-aos="fade-up-right" data-aos-delay="50"   data-aos-duration="1000" data-aos-mirror="true" data-aos-anchor-placement="top-center" data-aos-once="true">
               <div class="text">Download CV</div>
             </div>
           </div>
-          <div class="about-me-visual"></div>
+          <div data-aos="fade-up-left" data-aos-delay="50"   data-aos-duration="1000" data-aos-mirror="true" class="about-me-visual"  data-aos-once="true"></div>
           <img style="z-index:1;" src="../assets/Group82.svg" />
         </div>
         <div class="my-works">
           <div class="title">
             <hr />
+            <div data-aos="zoom-out-right" data-aos-delay="50"   data-aos-duration="1000"  data-aos-once="true">
             <a>My works</a>
+            </div>
           </div>
-          <div class="works">
-              <img src="../assets/v1.png">
-              <img src="../assets/v1.png">
-              <img src="../assets/v1.png">
+          <div class="works" >
+              <img src="../assets/v1.png" data-aos="flip-up" data-aos-delay="100"   data-aos-duration="1000" data-aos-anchor-placement="center-center" data-aos-once="true">
+              <img src="../assets/v1.png" data-aos="flip-up" data-aos-delay="150"   data-aos-duration="1000" data-aos-anchor-placement="center-center" data-aos-once="true">
+              <img src="../assets/v1.png" data-aos="flip-up" data-aos-delay="250"   data-aos-duration="1000" data-aos-anchor-placement="center-center" data-aos-once="true">
           </div>
           <div class="ne-pre">
             <a href="#" class="previous round">&#8249;</a>
@@ -74,16 +77,19 @@
         </div>
         <div class="capabilities">
           <div class="title">
+            <div data-aos="flip-up" data-aos-delay="50"   data-aos-duration="1000" data-aos-anchor-placement="center-center" data-aos-once="true">
             <a>My Capabilities</a>
+            </div>
             <hr />
           </div>
-          <div class="capabilities-des">
+          <div class="capabilities-des" data-aos="flip-up" data-aos-delay="100"   data-aos-duration="1000" data-aos-anchor-placement="center-center" data-aos-once="true">
+            
           <a>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
              sed do eiusmod tempor incididunt ut labore et t enim ad minim veniam, quis nostrud exercitation.</a>
             </div>
-             <div class="skills">
+             <div class="skills" >
               <div class="line1">
-               <div id = skill>
+               <div id = skill data-aos="zoom-out-down" data-aos-delay="50"   data-aos-duration="1500" data-aos-anchor-placement="center-center" data-aos-once="true">
                 <img src="../assets/spring-seeklogo.com.svg">  
                 <div class="skill-title">
                     <a>Java Spring</a>
@@ -92,7 +98,7 @@
                       <a>Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
                   </div>
                </div>
-               <div id ="skill" >
+               <div id ="skill" data-aos="zoom-out-down" data-aos-delay="50"   data-aos-duration="1500" data-aos-anchor-placement="center-center" data-aos-once="true">
                 <img src="../assets/spring-seeklogo.com.svg">  
                 <div class="skill-title">
                     <a>Java Spring</a>
@@ -101,7 +107,7 @@
                       <a>Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
                   </div>
                </div>
-               <div id = skill>
+               <div id = skill data-aos="zoom-out-down" data-aos-delay="50"   data-aos-duration="2000" data-aos-anchor-placement="center-center" data-aos-once="true">
                 <img src="../assets/spring-seeklogo.com.svg">  
                 <div class="skill-title">
                     <a>Java Spring</a>
@@ -111,8 +117,8 @@
                   </div>
                </div>
               </div>
-              <div class="line2">
-                <div id = skill>
+              <div class="line2" >
+                <div id = skill  data-aos="zoom-out-down" data-aos-delay="50"   data-aos-duration="1500" data-aos-anchor-placement="center-center" data-aos-once="true">
                   <img src="../assets/spring-seeklogo.com.svg">  
                   <div class="skill-title">
                       <a>Java Spring</a>
@@ -121,8 +127,8 @@
                         <a>Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
                     </div>
                  </div>
-                 <div id ="skill" >
-                  <img src="../assets/spring-seeklogo.com.svg">  
+                 <div id ="skill" data-aos="zoom-out-down" data-aos-delay="50"   data-aos-duration="1500" data-aos-anchor-placement="center-center" data-aos-once="true">
+                  <img src="../assets/spring-seeklogo.com.svg" >  
                   <div class="skill-title">
                       <a>Java Spring</a>
                     </div>
@@ -130,8 +136,8 @@
                         <a>Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
                     </div>
                  </div>
-                 <div id = skill>
-                  <img src="../assets/spring-seeklogo.com.svg">  
+                 <div id = skill data-aos="zoom-out-down" data-aos-delay="50"   data-aos-duration="1500" data-aos-anchor-placement="center-center" data-aos-once="true">
+                  <img src="../assets/spring-seeklogo.com.svg" >  
                   <div class="skill-title">
                       <a>Java Spring</a>
                     </div>
@@ -143,15 +149,20 @@
              </div>
         </div>
         </div>
+        
       </div>
     </div>
 </template>
 
 <script>
+import Blob from './Test'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+    components: {
+    Blob
   }
 }
 </script>
@@ -337,6 +348,7 @@ export default {
   top: 0;
   left: 0;
 }
+
 .body{
     width: 100%;
     background-color: transparent;
@@ -355,6 +367,7 @@ export default {
     position: absolute;
 }
 .about-me-title{
+  
     padding-left: 72px;
     padding-top: 72px;
     font-size: 48px;

@@ -25,7 +25,8 @@
       </div>
     </div>
     <div class="buttons">
-      <div class="new-game" type="button" @click="newGame()">
+      <div class="new-game" type="button" @click="newGame()"
+      >
         New game
       </div>
       <div class="counting">
@@ -45,7 +46,7 @@
       </g>
     </svg>
     <span class="base-timer__label">
-      {{minutes}} : {{seconds}}
+     {{timeFormated}}
     </span>
   </div>
       </div>
@@ -79,7 +80,6 @@
 import { sudoku } from "sudoku.js/sudoku.js";
 export default {
   name: "Sudoku",
-
   props: {
     msg: String,
      date: {
@@ -89,6 +89,8 @@ export default {
   data() {
     return {
        now: Math.trunc((new Date()).getTime() / 1000),
+       dateInMilliseconds: Math.trunc((new Date()).getTime() / 1000),
+       second: 0,
       nums: [
         [1, 2, 3],
         [4, 5, 6],
@@ -106,25 +108,30 @@ export default {
         [7, 7],
       ],
       puzzle: [],
-      difficulty: "hard",
+      difficulty: "easy",
       activeRow: -1,
       activeCol: -1,
+      timer: null
     };
   },
   mounted() {
-    this.generatePuzzle();
-   window.setInterval(() => {
-     console.log(this.minutes)
-        this.now = Math.trunc((new Date()).getTime() / 1000);
-    },1000);
-    
+    this.initEmptyPuzzle();
+     
   },
    computed: {
-    dateInMilliseconds() {
-      return Math.trunc((new Date()).getTime() / 1000)
-      
+    timeFormated(){
+      let min = Math.floor(this.second/60)
+      let sec = this.second%60
+      if(min<10){
+        min = `0${min}`
+      }
+      if(sec<10){
+        sec = `0${sec}`
+      }
+      return `${min}:${sec}`
     },
     seconds() {
+      this.seconds
       return (this.now - this.dateInMilliseconds ) % 60;
     },
     minutes() {
@@ -135,14 +142,28 @@ export default {
     
     newGame(){
       this.generatePuzzle();
+      this.startTime();
     },
     generatePuzzle() {
       const boardString = sudoku.generate(this.difficulty);
+      console.log(boardString)
       this.puzzle = sudoku.board_string_to_grid(boardString).map((row) => {
         return row.map((cell) => {
           return {
             value: cell !== "." ? parseInt(cell) : null,
             original: cell !== ".",
+          };
+        });
+      });
+    },
+    initEmptyPuzzle() {
+      const boardString ='.......................................................................................' 
+      console.log(boardString)
+      this.puzzle = sudoku.board_string_to_grid(boardString).map((row) => {
+        return row.map((cell) => {
+          return {
+            value: cell !== "." ? parseInt(cell) : null,
+            original: cell !== "",
           };
         });
       });
@@ -163,6 +184,18 @@ export default {
       this.puzzle[this.activeRow][this.activeCol].value = value;
       this.activeRow = -1;
       this.activeCol = -1;
+      
+        if(this.checkWin()){
+        const msg = [
+          'Congratulation!, You finished the game',
+          '',
+          `Difficulty: ${this.difficulty}`,
+          `Time: ${this.timeFormated}`
+        ];
+          alert(msg.join('\n'))
+          this.generatePuzzle();
+          this.startTime();
+      }
     },
     isCellInvalid(value, row, col) {
       if (!value) return true;
@@ -203,7 +236,23 @@ export default {
         }
       }
     },
-    checkWin() {},
+    startTime(){
+      this.second = 0
+     clearInterval(this.timer)
+    this.timer = setInterval(()=> {
+      this.second += 1
+    },1000)
+    },
+    checkWin() {
+      for(let i = 0; i<9; i++)
+      for(let j = 0; j<9; j++){
+        if(this.isCellInvalid(this.puzzle[i][j].value,i,j)){
+          return false
+        }
+      }
+      return true
+    
+    },
   },
 };
 </script>
