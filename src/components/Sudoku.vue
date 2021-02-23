@@ -1,7 +1,8 @@
 <template>
   <div class="container">
     <div class="sudoku">
-      <h2>Sudoku</h2>
+      <div class="title"><h2>Sudoku</h2></div>
+      
       <div class="grid">
         <div class="row" v-for="(row, rowIndex) in puzzle" :key="rowIndex">
           <div
@@ -259,6 +260,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.title{ 
+   
+    font-size: 40px;
+    font-weight: 320;}
 .base-timer {
   position: relative;
   width: 80px;
@@ -288,10 +293,11 @@ export default {
     font-size: 16px;
   }
 .container {
-  height: 800px;
+  height: auto;
   background: #040221;
   display: flex;
-  padding-top: 160px;
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 .sudoku {
   color: rgb(0, 0, 0);

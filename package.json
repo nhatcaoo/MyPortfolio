@@ -9,9 +9,14 @@
     "install": "napa robatron/sudoku.js"
   },
   "dependencies": {
+    "@splidejs/splide": "^2.4.21",
+    "@splidejs/vue-splide": "^0.3.5",
     "aos": "^2.3.4",
     "core-js": "^3.6.5",
+    "express": "^4.17.1",
     "napa": "^2.3.0",
+    "pug": "^3.0.0",
+    "pug-plain-loader": "^1.1.0",
     "snyk": "^1.455.0",
     "vue": "^3.0.0"
   },

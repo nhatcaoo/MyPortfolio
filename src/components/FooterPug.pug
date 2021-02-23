@@ -1,0 +1,29 @@
+div.footer
+    div.bubbles
+        - for (var i = 0; i < 128; i++) //Small numbers looks nice too
+            div.bubble(style=`--size:${2+Math.random()*4}rem; --distance:${6+Math.random()*4}rem; --position:${-5+Math.random()*110}%; --time:${2+Math.random()*2}s; --delay:${-1*(2+Math.random()*2)}s;`)
+  
+    div.content
+      
+                
+        
+        div
+            h2(href="#")  A big thanks for visiting my page 💖
+            div
+                b My phone:
+                a(href="#") (+84) 0963108567
+               
+            div
+                b My email:
+                a(href="#") nhatcao2608@gmail.com
+               
+            
+        div
+            a.image(href="https://codepen.io/z-" target="_blank" style="background-image: url(\"https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/happy.svg\")")
+            p ©2021 Made by Nhat Cao
+svg(style="position:fixed; top:100vh")
+    defs
+        filter#blob
+            feGaussianBlur(in="SourceGraphic" stdDeviation="10" result="blur")
+            feColorMatrix(in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="blob")
+            feComposite(in="SourceGraphic" in2="blob" operator="atop")

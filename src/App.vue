@@ -3,12 +3,19 @@
   <div id = 'app'>
 
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Timeline />
   <Sudoku />
+  <Contact />
+  <Footer />
   </div>
 </template>
+
 <script>
 import HelloWorld from './components/HelloWorld.vue';
 import Sudoku from './components/Sudoku';
+import Footer from './components/Footer';
+import Timeline from './components/Timeline';
+import Contact from './components/Contact';
 import AOS from "aos";
 import "aos/dist/aos.css"
  AOS.init();
@@ -17,6 +24,9 @@ export default {
   components: {
     HelloWorld,
     Sudoku,
+    Footer,
+    Contact,
+    Timeline
   }
 }
 </script>
