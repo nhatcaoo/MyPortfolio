@@ -14,7 +14,7 @@
           <div class="hello"><a>Hello, I am</a></div>
           <div class="name"><a>Nhat Cao</a></div>
           <div class="des">
-            <a> Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+            <a>Welcome to my Portfolio. Have a sip, scoll down and hope you enjoy it. </a>
           </div>
         </div>
         <div class="hire-me-info">
@@ -56,15 +56,15 @@
               data-aos-once="true"
             >
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat
+               As a person who got years of leanring plenty of subjects before becoming a programer,
+               I completely understand the importance of 'Ability to Learn'. 
+               This already daunting task is made even more difficult by the fact that software engineering is constantly evolving at a rapid pace, along with all the tools and technologies
               </p>
               <br /><br />
               <p>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.
+                To cope with this constant change, I choose the way to never stop learning, keep reading
+                and asking question to catch up with experienced software engineers and work on more interesting projects.
+              
               </p>
             </div>
             <div
@@ -162,9 +162,10 @@
                 data-aos-anchor-placement="top-center"
                 data-aos-once="true"
               >
-                <img src="../assets/spring-seeklogo.com.svg" />
+              
+                <img  src="../assets/eth-diamond-rainbow.png" />
                 <div class="skill-title">
-                  <a>Java Spring</a>
+                  <a>Sodility</a>
                 </div>
                 <div class="skill-des">
                   <a
@@ -200,7 +201,7 @@
               >
                 <img src="../assets/spring-seeklogo.com.svg" />
                 <div class="skill-title">
-                  <a>Java Spring</a>
+                  <a>VueJs</a>
                 </div>
                 <div class="skill-des">
                   <a
@@ -220,7 +221,7 @@
               >
                 <img src="../assets/spring-seeklogo.com.svg" />
                 <div class="skill-title">
-                  <a>Java Spring</a>
+                  <a>Html/Css</a>
                 </div>
                 <div class="skill-des">
                   <a
@@ -238,7 +239,7 @@
               >
                 <img src="../assets/spring-seeklogo.com.svg" />
                 <div class="skill-title">
-                  <a>Java Spring</a>
+                  <a>Operating systems</a>
                 </div>
                 <div class="skill-des">
                   <a
@@ -256,7 +257,7 @@
               >
                 <img src="../assets/spring-seeklogo.com.svg" />
                 <div class="skill-title">
-                  <a>Java Spring</a>
+                  <a>Database</a>
                 </div>
                 <div class="skill-des">
                   <a
@@ -467,13 +468,15 @@ export default {
 }
 .des {
   padding-top: 40px;
+  width: 20%;
 }
 .des a {
   letter-spacing: 0px;
   line-height: 41px;
   text-align: left;
-  font-size: 20px;
+  font-size: 18.8px;
   white-space: nowrap;
+  color: rgb(235, 227, 227);
 }
 .cover {
   z-index: -1;
@@ -500,7 +503,7 @@ export default {
   padding-right: 0px;
   top: 240px;
   display: flex;
-  height: 720px;
+  height: 780px;
   top: 0px;
 }
 .about-me img {
@@ -511,12 +514,11 @@ export default {
   padding-left: 72px;
   padding-top: 72px;
   font-size: 48px;
-  margin-bottom: 64px;
+  margin-bottom: 48px;
   font-weight: 680;
 }
 .about-me-content {
   z-index: 100;
-
   width: 48%;
 }
 .about-me-content p {
@@ -735,8 +737,8 @@ export default {
   padding-bottom: 12%;
 }
 .skills img {
-  width: 80px;
-  height: auto;
+  width: auto;
+  height: 100px;
 }
 .skills .skill-title {
   margin-top: 4%;
