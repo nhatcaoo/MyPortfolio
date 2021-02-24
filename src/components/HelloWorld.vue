@@ -305,14 +305,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.slider {
-  margin-top: 100px;
-  margin: auto;
-}
-.slider img {
-  border-radius: 30px;
-  width: 24rem;
-}
+
 .big-container {
   width: 100%;
 }
@@ -591,6 +584,16 @@ export default {
   font-weight: 314;
   line-height: 72px;
   width: 211px;
+}
+.slider {
+  width: fit-content;
+  margin-top: 100px;
+   margin-left: auto;
+  margin-right: auto;
+}
+.slider img {
+  border-radius: 30px;
+  width: 24rem;
 }
 .my-works {
   margin-top: 96px;
