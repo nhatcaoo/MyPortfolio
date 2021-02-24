@@ -101,9 +101,9 @@
               <a>My works</a>
             </div>
           </div>
-          <div class="slider">
+          <div class="slider" >
             <splide :options="options">
-              <splide-slide>
+              <splide-slide >
                 <img src="../assets/v1.png" />
               </splide-slide>
               <splide-slide>
@@ -593,7 +593,7 @@ export default {
 }
 .slider img {
   border-radius: 30px;
-  width: 24rem;
+  width: 20rem;
 }
 .my-works {
   margin-top: 96px;
