@@ -73,7 +73,6 @@
               data-aos-delay="50"
               data-aos-duration="1000"
               data-aos-mirror="true"
-              data-aos-anchor-placement="top-center"
               data-aos-once="true"
             >
               <div class="text">Download CV</div>
@@ -86,7 +85,9 @@
             data-aos-mirror="true"
             class="about-me-visual"
             data-aos-once="true"
-          ></div>
+          >
+          <img src="../assets/pic-me.jpg">
+          </div>
           <img style="z-index:1;" src="../assets/Group82.svg" />
         </div>
         <div class="my-works">
@@ -537,7 +538,7 @@ export default {
 }
 .about-me-visual {
   z-index: 101;
-  background-color: #0e0c38;
+  /* background-color: #0e0c38; */
   padding-top: 1%;
   padding-left: 1%;
   padding-right: 0%;
@@ -545,7 +546,13 @@ export default {
   top: 1%;
   transform: translate(25px, 0);
 }
+.about-me-visual img{
+   border: 50px solid #0e0c38 ;
+   max-height:92%; 
+   max-width:92%;
+   object-fit: cover
 
+}
 .download-cv {
   background-color: transparent;
   position: absolute;
