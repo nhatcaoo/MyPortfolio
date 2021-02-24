@@ -22,7 +22,7 @@
           <div class="social-logo">
             <img src="../assets/insta.svg" />
             <img src="../assets/linkedin.svg" />
-            <img
+            <img 
               src="../assets/freelancer-com-logo-2B5CE1A961-seeklogo.com.png"
             />
             <img src="../assets/GitHub-Mark-Light-120px-plus.png" />
@@ -199,7 +199,7 @@
                 data-aos-anchor-placement="top-center"
                 data-aos-once="true"
               >
-                <img src="../assets/spring-seeklogo.com.svg" />
+                <img src="../assets/Vue.js_Logo_2.svg" />
                 <div class="skill-title">
                   <a>VueJs</a>
                 </div>
@@ -219,9 +219,9 @@
                 data-aos-anchor-placement="top-center"
                 data-aos-once="true"
               >
-                <img src="../assets/spring-seeklogo.com.svg" />
+                <img src="../assets/icons8-web-design-64.png" />
                 <div class="skill-title">
-                  <a>Html/Css</a>
+                  <a>Web design</a>
                 </div>
                 <div class="skill-des">
                   <a
@@ -237,7 +237,7 @@
                 data-aos-anchor-placement="top-center"
                 data-aos-once="true"
               >
-                <img src="../assets/spring-seeklogo.com.svg" />
+                <img src="../assets/otto.svg" />
                 <div class="skill-title">
                   <a>Operating systems</a>
                 </div>
@@ -255,7 +255,7 @@
                 data-aos-anchor-placement="top-center"
                 data-aos-once="true"
               >
-                <img src="../assets/spring-seeklogo.com.svg" />
+                <img src="../assets/database-svgrepo-com.svg" />
                 <div class="skill-title">
                   <a>Database</a>
                 </div>

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --port 1998",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --port 1998",
     "lint": "vue-cli-service lint",
     "install": "napa robatron/sudoku.js"
   },
@@ -15,6 +15,7 @@
     "core-js": "^3.6.5",
     "express": "^4.17.1",
     "napa": "^2.3.0",
+    "node-telegram-bot-api": "^0.51.0",
     "pug": "^3.0.0",
     "pug-plain-loader": "^1.1.0",
     "snyk": "^1.455.0",
