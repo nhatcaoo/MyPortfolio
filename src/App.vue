@@ -5,7 +5,9 @@
   <HelloWorld msg="Welcome to Your Vue.js App"/>
   <Timeline />
   <Sudoku />
+  <div class="contact">
   <Contact />
+  </div>
   <Footer />
   </div>
 </template>
@@ -27,8 +29,21 @@ export default {
     Footer,
     Contact,
     Timeline
+  },
+methods: {
+       scrollToElement(options, className) {
+          console.log('ok')
+          console.log(options)
+          console.log(className)
+      const el = this.$el.getElementsByClassName(className)[0];
+      
+      if (el) {
+        el.scrollIntoView(options,);
+      }
   }
 }
+}
+
 </script>
 
 <style>

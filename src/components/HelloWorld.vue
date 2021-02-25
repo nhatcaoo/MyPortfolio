@@ -28,7 +28,7 @@
             <img src="../assets/GitHub-Mark-Light-120px-plus.png" />
           </div>
         </div>
-        <div class="hire-me">
+        <div class="hire-me" @click="scrollToElement({behavior: 'smooth'}, 'contact' )">
           <Blob />
         </div>
       </div>
@@ -270,7 +270,9 @@
         </div>
       </div>
     </div>
+
     <Contact />
+    
   </div>
 </template>
 <script>
@@ -300,6 +302,15 @@ export default {
     Splide,
     SplideSlide,
   },
+  methods:{
+        scrollToElement(options, className) {
+          console.log('ok')
+          console.log(options)
+          console.log(className)
+           this.$parent.scrollToElement(options, className);
+    
+  }
+  }
 };
 </script>
 
