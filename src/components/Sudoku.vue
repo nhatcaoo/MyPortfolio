@@ -79,6 +79,7 @@
 
 <script>
 import { sudoku } from "sudoku.js/sudoku.js";
+
 export default {
   name: "Sudoku",
   props: {

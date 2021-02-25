@@ -5,30 +5,36 @@
         <div class="menu">
           <div id="logo">Portfolio</div>
           <div id="tab">
-            <a>About</a>
+            <!-- <a>About</a>
             <a>Product</a>
-            <a>Contact</a>
+            <a>Contact</a> -->
           </div>
         </div>
         <div class="content">
           <div class="hello"><a>Hello, I am</a></div>
           <div class="name"><a>Nhat Cao</a></div>
           <div class="des">
-            <a>Welcome to my Portfolio. Have a sip, scoll down and hope you enjoy it. </a>
+            <a
+              >Welcome to my Portfolio. Have a sip, scoll down and hope you
+              enjoy it.
+            </a>
           </div>
         </div>
         <div class="hire-me-info">
           <a>Find me on</a>
           <div class="social-logo">
-            <img src="../assets/insta.svg" />
+            <img src="../assets/Telegram_2019_Logo.svg" />
             <img src="../assets/linkedin.svg" />
-            <img 
+            <img
               src="../assets/freelancer-com-logo-2B5CE1A961-seeklogo.com.png"
             />
             <img src="../assets/GitHub-Mark-Light-120px-plus.png" />
           </div>
         </div>
-        <div class="hire-me" @click="scrollToElement({behavior: 'smooth'}, 'contact' )">
+        <div
+          class="hire-me"
+          @click="scrollToElement({ behavior: 'smooth' }, 'contact')"
+        >
           <Blob />
         </div>
       </div>
@@ -56,15 +62,19 @@
               data-aos-once="true"
             >
               <p>
-               As a person who got years of leanring plenty of subjects before becoming a programer,
-               I completely understand the importance of 'Ability to Learn'. 
-               This already daunting task is made even more difficult by the fact that software engineering is constantly evolving at a rapid pace, along with all the tools and technologies
+                As a person who got years of leanring plenty of subjects before
+                becoming a programer, I completely understand the importance of
+                'Ability to Learn'. This already daunting task is made even more
+                difficult by the fact that software engineering is constantly
+                evolving at a rapid pace, along with all the tools and
+                technologies
               </p>
               <br /><br />
               <p>
-                To cope with this constant change, I choose the way to never stop learning, keep reading
-                and asking question to catch up with experienced software engineers and work on more interesting projects.
-              
+                To cope with this constant change, I choose the way to never
+                stop learning, keep reading and asking question to catch up with
+                experienced software engineers and work on more interesting
+                projects.
               </p>
             </div>
             <div
@@ -86,9 +96,9 @@
             class="about-me-visual"
             data-aos-once="true"
           >
-          <img src="../assets/pic-me.jpg">
+            <img src="../assets/pic-me.jpg" />
           </div>
-          <img style="z-index:1;" src="../assets/Group82.svg" />
+          <img style="z-index: 1" src="../assets/Group82.svg" />
         </div>
         <div class="my-works">
           <div class="title">
@@ -102,9 +112,9 @@
               <a>My works</a>
             </div>
           </div>
-          <div class="slider" >
+          <div class="slider">
             <splide :options="options">
-              <splide-slide >
+              <splide-slide>
                 <img src="../assets/v1.png" />
               </splide-slide>
               <splide-slide>
@@ -163,8 +173,7 @@
                 data-aos-anchor-placement="top-center"
                 data-aos-once="true"
               >
-              
-                <img  src="../assets/eth-diamond-rainbow.png" />
+                <img src="../assets/eth-diamond-rainbow.png" />
                 <div class="skill-title">
                   <a>Sodility</a>
                 </div>
@@ -273,7 +282,6 @@
     </div>
 
     <Contact />
-    
   </div>
 </template>
 <script>
@@ -303,21 +311,19 @@ export default {
     Splide,
     SplideSlide,
   },
-  methods:{
-        scrollToElement(options, className) {
-          console.log('ok')
-          console.log(options)
-          console.log(className)
-           this.$parent.scrollToElement(options, className);
-    
-  }
-  }
+  methods: {
+    scrollToElement(options, className) {
+      console.log("ok");
+      console.log(options);
+      console.log(className);
+      this.$parent.scrollToElement(options, className);
+    },
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 .big-container {
   width: 100%;
 }
@@ -398,11 +404,20 @@ export default {
 
 .social-logo {
   padding-top: 20px;
+  width: 240px;
+  display: flex;
+  justify-content: space-between;
 }
 .social-logo img {
-  width: auto !important;
-  height: 32px !important;
-  padding-right: 32px;
+  cursor: pointer;
+  width: auto;
+  height: 32px;
+  /* padding-right: 32px; */
+}
+.social-logo img:hover {
+  width: auto;
+  height: 40px;
+  transition: all 0.5s ease;
 }
 .hire-me-info a {
   letter-spacing: 0px;
@@ -516,7 +531,7 @@ export default {
   position: absolute;
 }
 .about-me-title {
-  padding-left: 72px;
+  padding-left: 84px;
   padding-top: 72px;
   font-size: 48px;
   margin-bottom: 48px;
@@ -524,10 +539,10 @@ export default {
 }
 .about-me-content {
   z-index: 100;
-  width: 48%;
+  width: 52%;
 }
 .about-me-content p {
-  padding-left: 72px;
+  padding-left: 84px;
   line-height: 48px;
   padding-right: 4%;
   text-align: left;
@@ -551,18 +566,17 @@ export default {
   z-index: 101;
   /* background-color: #0e0c38; */
   padding-top: 1%;
-  padding-left: 1%;
+  padding-left: 4%;
   padding-right: 0%;
   width: 40%;
   top: 1%;
   transform: translate(25px, 0);
 }
-.about-me-visual img{
-   border: 50px solid #0e0c38 ;
-   max-height:92%; 
-   max-width:92%;
-   object-fit: cover
-
+.about-me-visual img {
+  border: 50px solid #0e0c38;
+  max-height: 92%;
+  max-width: 92%;
+  object-fit: cover;
 }
 .download-cv {
   background-color: transparent;
@@ -606,7 +620,7 @@ export default {
 .slider {
   width: fit-content;
   margin-top: 100px;
-   margin-left: auto;
+  margin-left: auto;
   margin-right: auto;
 }
 .slider img {
