@@ -2,7 +2,7 @@
 <container>
         <div class="title">
             <div data-aos="flip-up" data-aos-delay="50"   data-aos-duration="1000" data-aos-anchor-placement="top-center" data-aos-once="true">
-            <a>How did I deal with problems</a>
+            <a>How did I plan for a project</a>
             </div>
             <hr />
           </div>
@@ -11,27 +11,27 @@
                 data-aos-delay="50"
                 data-aos-duration="1500"
                 data-aos-anchor-placement="top-center"
-                data-aos-once="true">Understand the client’s subject matter completely and build on the knowledge related to it, becoming intimately familiar with the subject matter. Determine methods to address the specific customer’s needs and requirements.</p>
+                data-aos-once="true">Understand the client’s subject matter completely and build on the knowledge related to it, becoming intimately familiar with the subject matter.</p>
   <p data-aos="zoom-out-down"
                 data-aos-delay="50"
                 data-aos-duration="1500"
                 data-aos-anchor-placement="top-center"
-                data-aos-once="true">Misleadingly thought of as the superficial appearance of a product, design actually encompasses a lot more. It is a cross functional process that includes market research, technical research, design of a concept, and prototype mockup.</p>
+                data-aos-once="true">Start with a large white paper and a pen. Write down the basic ideas about the project and find out what challenges that I might face. Do a throught out reseach, find similar projects to see how other programmers solve their problems.</p>
   <p data-aos="zoom-out-down"
                 data-aos-delay="50"
                 data-aos-duration="1500"
                 data-aos-anchor-placement="top-center"
-                data-aos-once="true">Findings from the research and design phases are utilized for the production of specific products including materials, systems, and methods. Engineer utilizing the research and designs to produce commercial products for the customer. </p>
+                data-aos-once="true">List all the features the project will have. Keep asking what entities that I must create to implement that features and repeat this for all the features one by one.</p>
   <p data-aos="zoom-out-down"
                 data-aos-delay="50"
                 data-aos-duration="1500"
                 data-aos-anchor-placement="top-center"
-                data-aos-once="true">Long bois mlem I am bekom fat wrinkler puggo maximum borkdrive big ol pupper I am bekom fat, fluffer vvv adorable doggo lotsa pats snoot. I am bekom fat ur givin me a spook length boy wow very biscit very good spot.</p>
+                data-aos-once="true">Design the basic architecture for the project. Build up the necessary preparation like Ui design, deploy environment…</p>
   <p data-aos="zoom-out-down"
                 data-aos-delay="50"
                 data-aos-duration="1500"
                 data-aos-anchor-placement="top-center"
-                data-aos-once="true">Doggo ipsum long bois lotsa pats blep. What a nice floof ruff super chub very good spot, the neighborhood pupper lotsa pats. Borkdrive shibe shoober what a nice floof, borking doggo.</p>
+                data-aos-once="true">Take a warm seat and a hot cup of coffee, stop planning so much and just start coding from a blank window. </p>
 </main>
 </container>
 </template>
