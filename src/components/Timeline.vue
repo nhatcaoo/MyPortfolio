@@ -7,11 +7,31 @@
             <hr />
           </div>
     <main>
-  <p>Understand the client’s subject matter completely and build on the knowledge related to it, becoming intimately familiar with the subject matter. Determine methods to address the specific customer’s needs and requirements.</p>
-  <p>Misleadingly thought of as the superficial appearance of a product, design actually encompasses a lot more. It is a cross functional process that includes market research, technical research, design of a concept, and prototype mockup.</p>
-  <p>Findings from the research and design phases are utilized for the production of specific products including materials, systems, and methods. Engineer utilizing the research and designs to produce commercial products for the customer. </p>
-  <p>Long bois mlem I am bekom fat wrinkler puggo maximum borkdrive big ol pupper I am bekom fat, fluffer vvv adorable doggo lotsa pats snoot. I am bekom fat ur givin me a spook length boy wow very biscit very good spot.</p>
-  <p>Doggo ipsum long bois lotsa pats blep. What a nice floof ruff super chub very good spot, the neighborhood pupper lotsa pats. Borkdrive shibe shoober what a nice floof, borking doggo.</p>
+  <p data-aos="zoom-out-down"
+                data-aos-delay="50"
+                data-aos-duration="1500"
+                data-aos-anchor-placement="top-center"
+                data-aos-once="true">Understand the client’s subject matter completely and build on the knowledge related to it, becoming intimately familiar with the subject matter. Determine methods to address the specific customer’s needs and requirements.</p>
+  <p data-aos="zoom-out-down"
+                data-aos-delay="50"
+                data-aos-duration="1500"
+                data-aos-anchor-placement="top-center"
+                data-aos-once="true">Misleadingly thought of as the superficial appearance of a product, design actually encompasses a lot more. It is a cross functional process that includes market research, technical research, design of a concept, and prototype mockup.</p>
+  <p data-aos="zoom-out-down"
+                data-aos-delay="50"
+                data-aos-duration="1500"
+                data-aos-anchor-placement="top-center"
+                data-aos-once="true">Findings from the research and design phases are utilized for the production of specific products including materials, systems, and methods. Engineer utilizing the research and designs to produce commercial products for the customer. </p>
+  <p data-aos="zoom-out-down"
+                data-aos-delay="50"
+                data-aos-duration="1500"
+                data-aos-anchor-placement="top-center"
+                data-aos-once="true">Long bois mlem I am bekom fat wrinkler puggo maximum borkdrive big ol pupper I am bekom fat, fluffer vvv adorable doggo lotsa pats snoot. I am bekom fat ur givin me a spook length boy wow very biscit very good spot.</p>
+  <p data-aos="zoom-out-down"
+                data-aos-delay="50"
+                data-aos-duration="1500"
+                data-aos-anchor-placement="top-center"
+                data-aos-once="true">Doggo ipsum long bois lotsa pats blep. What a nice floof ruff super chub very good spot, the neighborhood pupper lotsa pats. Borkdrive shibe shoober what a nice floof, borking doggo.</p>
 </main>
 </container>
 </template>
