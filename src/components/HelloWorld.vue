@@ -705,7 +705,7 @@ export default {
   cursor: pointer;
 }
 .slider img:hover{
-  opacity: 80%;
+  
   border: transparent solid 20px;
   transition: all 0.2s ease;
 }
