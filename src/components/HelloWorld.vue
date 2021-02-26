@@ -705,8 +705,8 @@ export default {
   cursor: pointer;
 }
 .slider img:hover{
-  
-  border: transparent solid 20px;
+  width: 18rem;
+  /* border: transparent solid 20px; */
   transition: all 0.3s ease;
 }
 .slider img:selected{
