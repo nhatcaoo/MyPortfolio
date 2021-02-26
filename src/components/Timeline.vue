@@ -16,7 +16,7 @@
                 data-aos-delay="50"
                 data-aos-duration="1500"
                 data-aos-anchor-placement="top-center"
-                data-aos-once="true">Start with a large white paper and a pen. Write down the basic ideas about the project and find out what challenges that I might face. Do a throught out reseach, find similar projects to see how other programmers solve their problems.</p>
+                data-aos-once="true">Start with a large white paper and a pen. Write down the basic ideas about the project and find out what challenges that I might face. Do a throughout research, find similar projects to see how the other programmers solve their problems.</p>
   <p data-aos="zoom-out-down"
                 data-aos-delay="50"
                 data-aos-duration="1500"
@@ -26,7 +26,7 @@
                 data-aos-delay="50"
                 data-aos-duration="1500"
                 data-aos-anchor-placement="top-center"
-                data-aos-once="true">Design the basic architecture for the project. Build up the necessary preparation like Ui design, deploy environment…</p>
+                data-aos-once="true">Design the basic architecture for the project. Build up the necessary preparation like UI/UX design, deploy environment…</p>
   <p data-aos="zoom-out-down"
                 data-aos-delay="50"
                 data-aos-duration="1500"

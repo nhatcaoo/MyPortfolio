@@ -23,12 +23,18 @@
         <div class="hire-me-info">
           <a>Find me on</a>
           <div class="social-logo">
+            <a href="https://telegram.me/nhatwonderfarmer">
             <img src="../assets/Telegram_2019_Logo.svg" />
-            <img src="../assets/linkedin.svg" />
+            </a>
+            <a href="https://www.linkedin.com/in/cao-nh%E1%BA%ADt-1766331aa/">
+            <img src="../assets/linkedin.svg"
+            > </a>
+            <a href="https://github.com/nhatcaoo">
             <img
               src="../assets/freelancer-com-logo-2B5CE1A961-seeklogo.com.png"
-            />
-            <img src="../assets/GitHub-Mark-Light-120px-plus.png" />
+            /> </a>
+            <a href="https://github.com/nhatcaoo">
+            <img src="../assets/GitHub-Mark-Light-120px-plus.png" /> </a>
           </div>
         </div>
         <div
@@ -85,7 +91,8 @@
               data-aos-mirror="true"
               data-aos-once="true"
             >
-              <div class="text">Download CV</div>
+            <a  href="../fonts/cv.pdf" download="Cao_Linh_Nhat_Cv.pdf">
+              <div class="text" >Download CV</div></a>
             </div>
           </div>
           <div
@@ -112,29 +119,73 @@
               <a>My works</a>
             </div>
           </div>
+          <div class="project">
+            <div class="project-des">
+              <div class="project-title">Project Name:</div>
+              <p>{{ projectDes[0] }}</p>
+            </div>
+            <div class="project-des">
+              <div class="project-title">Duration:</div>
+              <p>{{ projectDes[1] }}</p>
+            </div>
+            <div class="project-des">
+              <div class="project-title">Description:</div>
+              <p>{{ projectDes[2] }}</p>
+            </div>
+          </div>
           <div class="slider">
             <splide :options="options">
-              <splide-slide>
+              <splide-slide
+                @mouseover="
+                  listentToHover('Ticketing with blockchain', '100 hours', 'Build on the power of ethereum blockchain platform. A safe and secure way to own and exchange digital tickets.')
+                "
+                @mouseleave="listentToHover('', '', '')"
+              >
                 <img src="../assets/v1.png" />
               </splide-slide>
-              <splide-slide>
+              <splide-slide
+                @mouseover="
+                   listentToHover('Ticketing with blockchain', '100 hours', 'Build on the power of ethereum blockchain platform. A safe and secure way to own and exchange digital tickets.')
+                "
+                @mouseleave="listentToHover('', '', '')"
+              >
                 <img src="../assets/v1.png" />
               </splide-slide>
-              <splide-slide>
+              <splide-slide
+                @mouseover="
+                  listentToHover('Ticketing with blockchain', '100 hours', 'Build on the power of ethereum blockchain platform. A safe and secure way to own and exchange digital tickets.')
+                "
+                @mouseleave="listentToHover('', '', '')"
+              >
                 <img src="../assets/v1.png" />
               </splide-slide>
-              <splide-slide>
+              <splide-slide
+                @mouseover="
+                   listentToHover('Ticketing with blockchain', '100 hours', 'Build on the power of ethereum blockchain platform. A safe and secure way to own and exchange digital tickets.')
+                "
+                @mouseleave="listentToHover('', '', '')"
+              >
                 <img src="../assets/v1.png" />
               </splide-slide>
-              <splide-slide>
+              <splide-slide
+                @mouseover="
+                   listentToHover('Ticketing with blockchain', '100 hours', 'Build on the power of ethereum blockchain platform. A safe and secure way to own and exchange digital tickets.')
+                "
+                @mouseleave="listentToHover('', '', '')"
+              >
                 <img src="../assets/v1.png" />
               </splide-slide>
-              <splide-slide>
+              <splide-slide
+                @mouseover="
+                  listentToHover('Ticketing with blockchain', '100 hours', 'Build on the power of ethereum blockchain platform. A safe and secure way to own and exchange digital tickets.')
+                "
+                @mouseleave="listentToHover('', '', '')"
+              >
                 <img src="../assets/v1.png" />
               </splide-slide>
             </splide>
           </div>
-          <div class="works"></div>
+          
         </div>
         <div class="capabilities">
           <div class="title">
@@ -158,9 +209,8 @@
             data-aos-once="true"
           >
             <a
-              >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et t enim ad minim veniam,
-              quis nostrud exercitation.</a
+              >From the very beginning to the present, each project I've worked for gives me a lot of new knowledge that I really appreciate.
+              Let's take a look at them  </a
             >
           </div>
           <div class="skills">
@@ -175,11 +225,11 @@
               >
                 <img src="../assets/eth-diamond-rainbow.png" />
                 <div class="skill-title">
-                  <a>Sodility</a>
+                  <a>Smart Contract</a>
                 </div>
                 <div class="skill-des">
                   <a
-                    >Lorem ipsum dolor sit amet, consectetur adipisicing elit</a
+                    >Familiar with Solidity and Ethereum platform. Using them to create types of smart contract</a
                   >
                 </div>
               </div>
@@ -197,7 +247,7 @@
                 </div>
                 <div class="skill-des">
                   <a
-                    >Lorem ipsum dolor sit amet, consectetur adipisicing elit</a
+                    >Got one year of experience writing APIs for large projects</a
                   >
                 </div>
               </div>
@@ -215,7 +265,7 @@
                 </div>
                 <div class="skill-des">
                   <a
-                    >Lorem ipsum dolor sit amet, consectetur adipisicing elit</a
+                    >Is a novice in learning vue js.</a
                   >
                 </div>
               </div>
@@ -235,7 +285,7 @@
                 </div>
                 <div class="skill-des">
                   <a
-                    >Lorem ipsum dolor sit amet, consectetur adipisicing elit</a
+                    >Having pretty good layout thinking, proficient in many design tools </a
                   >
                 </div>
               </div>
@@ -253,7 +303,7 @@
                 </div>
                 <div class="skill-des">
                   <a
-                    >Lorem ipsum dolor sit amet, consectetur adipisicing elit</a
+                    >Familiar with diffrent environments and deployment methods</a
                   >
                 </div>
               </div>
@@ -271,7 +321,7 @@
                 </div>
                 <div class="skill-des">
                   <a
-                    >Lorem ipsum dolor sit amet, consectetur adipisicing elit</a
+                    >have the ability to manipulate vast amounts of data and have a solid acumen to handle them</a
                   >
                 </div>
               </div>
@@ -295,6 +345,8 @@ import "@splidejs/splide/dist/css/themes/splide-skyblue.min.css";
 export default {
   data() {
     return {
+      projectDes: [],
+      projectName: "Ticketing",
       options: {
         width: "88rem",
         gap: "8rem",
@@ -312,6 +364,11 @@ export default {
     SplideSlide,
   },
   methods: {
+    listentToHover(name, duration, des) {
+      (this.projectDes[0] = name),
+        (this.projectDes[1] = duration),
+        (this.projectDes[2] = des);
+    },
     scrollToElement(options, className) {
       console.log("ok");
       console.log(options);
@@ -617,15 +674,47 @@ export default {
   line-height: 72px;
   width: 211px;
 }
+.project {
+  font-size: 18px;
+  width: 1200px;
+  line-height: 40px;
+  margin-left: 100px;
+}
+.project p {
+  color: rgb(196, 233, 62);
+}
 .slider {
   width: fit-content;
-  margin-top: 100px;
+  margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
+}
+.project-title {
+  box-sizing: border-box;
+  width: 180px;
+}
+.project-des p {
+  font-size: 16px;
+  width: 1200px;
+ 
 }
 .slider img {
   border-radius: 30px;
   width: 20rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.slider img:hover{
+  opacity: 80%;
+  border: transparent solid 20px;
+  transition: all 0.2s ease;
+}
+.slider img:selected{
+  border: transparent solid 20px;
+  transition: all 0.2s ease;
+}
+.project-des {
+  display: flex;
 }
 .my-works {
   margin-top: 96px;

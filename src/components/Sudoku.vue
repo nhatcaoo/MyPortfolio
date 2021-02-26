@@ -1,8 +1,12 @@
 <template>
+<div class="big-container">
+  <div class="title-hr">
+    <div class="title">Sudoku</div>
+     <hr />
+     </div>
+    <div class="sub-title"> Tired of reading all the words up there? Have fun with my sudoku</div>
   <div class="container">
     <div class="sudoku">
-      <div class="title"><h2>Sudoku</h2></div>
-
       <div class="grid">
         <div class="row" v-for="(row, rowIndex) in puzzle" :key="rowIndex">
           <div
@@ -77,6 +81,7 @@
         </button>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -154,7 +159,6 @@ export default {
       this.$swal('Hello Vue world!!!');
     },
     newGame() {
-    
       this.generatePuzzle();
       this.startTime();
     },
@@ -273,18 +277,48 @@ export default {
   },
 };
 </script>
-<style src="@vueform/multiselect/themes/default.css"></style>
+<style >
+@import "../assets/default.css";
+</style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .dropdown-text{
+  
   color: #040221  !important
 }
-.container{
-  
+.title-hr{
+  display: flex;
+
+}
+hr {
+    display: block;
+    margin-top: 2.5%;
+    margin-left: 40px;
+    margin-right: auto;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #FF0513;
+    width: 240px;
+}
+.big-container{
+  padding-top: 100px;
+  padding-bottom: 120px;
+  background: #040221;
+  display: block;
 }
 .title {
-  font-size: 40px;
+  font-size: 44px;
+ padding-left: 72px;
+  font-weight: 800;
+  width: auto;
+}
+.sub-title {
+  font-size: 18px;
+ padding-left: 72px;
+  margin-bottom: 60px;
   font-weight: 320;
+  width: 40%;
+  color: #9b9b9b;
 }
 .base-timer {
   position: relative;
@@ -316,10 +350,9 @@ export default {
 }
 .container {
   height: auto;
-  background: #040221;
+  
   display: flex;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  
 }
 .sudoku {
   color: rgb(0, 0, 0);
