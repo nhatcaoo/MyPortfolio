@@ -707,7 +707,7 @@ export default {
 .slider img:hover{
   
   border: transparent solid 20px;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 .slider img:selected{
   border: transparent solid 20px;
