@@ -15,7 +15,7 @@
           <div class="name"><a>Nhat Cao</a></div>
           <div class="des">
             <a
-              >Welcome to my Portfolio. Have a sip, scoll down and hope you
+              >I'm a blockchain developer. Welcome to my Portfolio. Have a sip, scoll down and hope you
               enjoy it.
             </a>
           </div>
@@ -26,7 +26,7 @@
             <a href="https://telegram.me/nhatwonderfarmer">
             <img src="../assets/Telegram_2019_Logo.svg" />
             </a>
-            <a href="https://www.linkedin.com/in/cao-nh%E1%BA%ADt-1766331aa/">
+            <a href="https://www.linkedin.com/in/nhat-cao-4079b9158/">
             <img src="../assets/linkedin.svg"
             > </a>
             <a href="https://github.com/nhatcaoo">
@@ -107,7 +107,7 @@
           </div>
           <img style="z-index: 1" src="../assets/Group82.svg" />
         </div>
-        <div class="my-works">
+        <!-- <div class="my-works">
           <div class="title">
             <hr />
             <div
@@ -186,7 +186,7 @@
             </splide>
           </div>
           
-        </div>
+        </div> -->
         <div class="capabilities">
           <div class="title">
             <div
@@ -241,13 +241,13 @@
                 data-aos-anchor-placement="top-center"
                 data-aos-once="true"
               >
-                <img src="../assets/spring-seeklogo.com.svg" />
+                <img src="../assets/gopher.svg" />
                 <div class="skill-title">
-                  <a>Java Spring</a>
+                  <a>Golang</a>
                 </div>
                 <div class="skill-des">
                   <a
-                    >Got one year of experience writing APIs for large projects</a
+                    >Using Golang for several projects that interact with ethereum and binance smart chain</a
                   >
                 </div>
               </div>
@@ -259,13 +259,13 @@
                 data-aos-anchor-placement="top-center"
                 data-aos-once="true"
               >
-                <img src="../assets/Vue.js_Logo_2.svg" />
+                <img src="../assets/web3.jpg" />
                 <div class="skill-title">
-                  <a>VueJs</a>
+                  <a>Web3 Js</a>
                 </div>
                 <div class="skill-des">
                   <a
-                    >Is a novice in learning vue js.</a
+                    >Using web3js both in frontends and backends to read data from the blockchain and make transactions</a
                   >
                 </div>
               </div>
@@ -279,13 +279,13 @@
                 data-aos-anchor-placement="top-center"
                 data-aos-once="true"
               >
-                <img src="../assets/icons8-web-design-64.png" />
+                <img src="../assets/binance.png" />
                 <div class="skill-title">
-                  <a>Web design</a>
+                  <a>Crypto market</a>
                 </div>
                 <div class="skill-des">
                   <a
-                    >Having pretty good layout thinking, proficient in many design tools </a
+                    >Has a hobby of researching about cryptocurrency market , especially erc20 and bsc20 token.</a
                   >
                 </div>
               </div>
@@ -315,13 +315,13 @@
                 data-aos-anchor-placement="top-center"
                 data-aos-once="true"
               >
-                <img src="../assets/database-svgrepo-com.svg" />
+                <img src="../assets/rest_api.png" />
                 <div class="skill-title">
-                  <a>Database</a>
+                  <a>Restful Api</a>
                 </div>
                 <div class="skill-des">
                   <a
-                    >have the ability to manipulate vast amounts of data and have a solid acumen to handle them</a
+                    >Having experience for develop restful api using Java Spring or Golang </a
                   >
                 </div>
               </div>
@@ -336,7 +336,7 @@
 </template>
 <script>
 import Blob from "./Test";
-import { Splide, SplideSlide } from "@splidejs/vue-splide";
+//import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 // or
 import "@splidejs/splide/dist/css/themes/splide-sea-green.min.css";
@@ -360,8 +360,8 @@ export default {
   },
   components: {
     Blob,
-    Splide,
-    SplideSlide,
+   // Splide,
+  //  SplideSlide,
   },
   methods: {
     listentToHover(name, duration, des) {

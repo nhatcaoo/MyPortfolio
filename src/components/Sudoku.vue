@@ -4,7 +4,7 @@
     <div class="title">Sudoku</div>
      <hr />
      </div>
-    <div class="sub-title"> Tired of reading all the words up there? Have fun with my sudoku</div>
+    <div class="sub-title"> Tired of reading all the words up there? Take a rest and play this game!</div>
   <div class="container">
     <div class="sudoku">
       <div class="grid">
