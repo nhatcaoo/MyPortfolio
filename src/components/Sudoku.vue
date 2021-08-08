@@ -1,8 +1,12 @@
 <template>
+<div class="big-container">
+  <div class="title-hr">
+    <div class="title">Sudoku</div>
+     <hr />
+     </div>
+    <div class="sub-title"> Tired of reading all the words up there? Have fun with my sudoku</div>
   <div class="container">
     <div class="sudoku">
-      <div class="title"><h2>Sudoku</h2></div>
-      
       <div class="grid">
         <div class="row" v-for="(row, rowIndex) in puzzle" :key="rowIndex">
           <div
@@ -26,30 +30,33 @@
       </div>
     </div>
     <div class="buttons">
-      <div class="new-game" type="button" @click="newGame()"
-      >
+      <div class="new-game" type="button" @click="newGame()">
         New game
       </div>
+      <div class="dropdown-text">
+        <Multiselect v-model="choice" :options="options" />
+      </div>
+
       <div class="counting">
-       <div class="base-timer">
-    <svg
-      class="base-timer__svg"
-      viewBox="0 0 100 100"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g class="base-timer__circle">
-        <circle
-          class="base-timer__path-elapsed"
-          cx="50"
-          cy="50"
-          r="46.5"
-        />
-      </g>
-    </svg>
-    <span class="base-timer__label">
-     {{timeFormated}}
-    </span>
-  </div>
+        <div class="base-timer">
+          <svg
+            class="base-timer__svg"
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g class="base-timer__circle">
+              <circle
+                class="base-timer__path-elapsed"
+                cx="50"
+                cy="50"
+                r="46.5"
+              />
+            </g>
+          </svg>
+          <span class="base-timer__label">
+            {{ timeFormated }}
+          </span>
+        </div>
       </div>
       <div class="button-row" v-for="i in 3" :key="i">
         <button
@@ -75,24 +82,31 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
 import { sudoku } from "sudoku.js/sudoku.js";
+import Multiselect from "@vueform/multiselect";
 
 export default {
   name: "Sudoku",
   props: {
     msg: String,
-     date: {
-      type: String
-    }
+    date: {
+      type: String,
+    },
+  },
+  components: {
+    Multiselect,
   },
   data() {
     return {
-       now: Math.trunc((new Date()).getTime() / 1000),
-       dateInMilliseconds: Math.trunc((new Date()).getTime() / 1000),
-       second: 0,
+      choice: 1,
+      options: ["easy", "medium", "hard", "very-hard", "insane", "inhuman"],
+      now: Math.trunc(new Date().getTime() / 1000),
+      dateInMilliseconds: Math.trunc(new Date().getTime() / 1000),
+      second: 0,
       nums: [
         [1, 2, 3],
         [4, 5, 6],
@@ -113,42 +127,44 @@ export default {
       difficulty: "easy",
       activeRow: -1,
       activeCol: -1,
-      timer: null
+      timer: null,
     };
   },
   mounted() {
     this.initEmptyPuzzle();
-     
   },
-   computed: {
-    timeFormated(){
-      let min = Math.floor(this.second/60)
-      let sec = this.second%60
-      if(min<10){
-        min = `0${min}`
+  computed: {
+    timeFormated() {
+      let min = Math.floor(this.second / 60);
+      let sec = this.second % 60;
+      if (min < 10) {
+        min = `0${min}`;
       }
-      if(sec<10){
-        sec = `0${sec}`
+      if (sec < 10) {
+        sec = `0${sec}`;
       }
-      return `${min}:${sec}`
+      return `${min}:${sec}`;
     },
     seconds() {
-      this.seconds
-      return (this.now - this.dateInMilliseconds ) % 60;
+      this.seconds;
+      return (this.now - this.dateInMilliseconds) % 60;
     },
     minutes() {
       return Math.trunc((this.now - this.dateInMilliseconds) / 60) % 60;
     },
-   },
+  },
   methods: {
-    
-    newGame(){
+     showAlert() {
+      // Use sweetalert2
+      this.$swal('Hello Vue world!!!');
+    },
+    newGame() {
       this.generatePuzzle();
       this.startTime();
     },
     generatePuzzle() {
-      const boardString = sudoku.generate(this.difficulty);
-      console.log(boardString)
+      const boardString = sudoku.generate(this.options[this.choice]);
+      console.log(boardString);
       this.puzzle = sudoku.board_string_to_grid(boardString).map((row) => {
         return row.map((cell) => {
           return {
@@ -159,8 +175,9 @@ export default {
       });
     },
     initEmptyPuzzle() {
-      const boardString ='.......................................................................................' 
-      console.log(boardString)
+      const boardString =
+        ".......................................................................................";
+      console.log(boardString);
       this.puzzle = sudoku.board_string_to_grid(boardString).map((row) => {
         return row.map((cell) => {
           return {
@@ -186,17 +203,17 @@ export default {
       this.puzzle[this.activeRow][this.activeCol].value = value;
       this.activeRow = -1;
       this.activeCol = -1;
-      
-        if(this.checkWin()){
+
+      if (this.checkWin()) {
         const msg = [
-          'Congratulation!, You finished the game',
-          '',
-          `Difficulty: ${this.difficulty}`,
-          `Time: ${this.timeFormated}`
+          "Congratulation!, You finished the game",
+          "",
+          `Difficulty: ${this.options[this.choice]}`,
+          `Time: ${this.timeFormated}`,
         ];
-          alert(msg.join('\n'))
-          this.generatePuzzle();
-          this.startTime();
+        this.stopTime()
+         this.$swal(msg.join("\n"));
+        this.initEmptyPuzzle();
       }
     },
     isCellInvalid(value, row, col) {
@@ -238,67 +255,104 @@ export default {
         }
       }
     },
-    startTime(){
-      this.second = 0
-     clearInterval(this.timer)
-    this.timer = setInterval(()=> {
-      this.second += 1
-    },1000)
+    startTime() {
+      this.second = 0;
+      clearInterval(this.timer);
+      this.timer = setInterval(() => {
+        this.second += 1;
+      }, 1000);
+    },
+    stopTime(){
+       clearInterval(this.timer);
     },
     checkWin() {
-      for(let i = 0; i<9; i++)
-      for(let j = 0; j<9; j++){
-        if(this.isCellInvalid(this.puzzle[i][j].value,i,j)){
-          return false
+      for (let i = 0; i < 9; i++)
+        for (let j = 0; j < 9; j++) {
+          if (this.isCellInvalid(this.puzzle[i][j].value, i, j)) {
+            return false;
+          }
         }
-      }
-      return true
-    
+      return true;
     },
   },
 };
 </script>
-
+<style >
+@import "../assets/default.css";
+</style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.title{ 
-   
-    font-size: 40px;
-    font-weight: 320;}
+.dropdown-text{
+  
+  color: #040221  !important
+}
+.title-hr{
+  display: flex;
+
+}
+hr {
+    display: block;
+    margin-top: 2.5%;
+    margin-left: 40px;
+    margin-right: auto;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #FF0513;
+    width: 240px;
+}
+.big-container{
+  padding-top: 100px;
+  padding-bottom: 120px;
+  background: #040221;
+  display: block;
+}
+.title {
+  font-size: 44px;
+ padding-left: 72px;
+  font-weight: 800;
+  width: auto;
+}
+.sub-title {
+  font-size: 18px;
+ padding-left: 72px;
+  margin-bottom: 60px;
+  font-weight: 320;
+  width: 40%;
+  color: #9b9b9b;
+}
 .base-timer {
   position: relative;
   width: 80px;
   height: 80px;
-  margin:auto; 
+  margin: auto;
   margin-top: 8px;
   margin-bottom: 8px;
-  }
+}
 /* Removes SVG styling that would hide the time label */
-  .base-timer__circle {
-    fill: none;
-    stroke: none;
-  }
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
 /* The SVG path that displays the timer's progress */
-  .base-timer__path-elapsed {
-    stroke-width: 7px;
-    stroke:grey;
-  }
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
 .base-timer__label {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-  }
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
 .container {
   height: auto;
-  background: #040221;
+  
   display: flex;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  
 }
 .sudoku {
   color: rgb(0, 0, 0);
@@ -318,7 +372,7 @@ export default {
 }
 .new-game {
   margin: auto;
-  user-select:none;
+  user-select: none;
   margin-bottom: 8px;
   width: 160px;
   height: 40px;
@@ -359,7 +413,7 @@ export default {
   color: white;
   background-color: rgb(158, 158, 158);
   height: 48px;
-   background-color: rgb(158, 158, 158);
+  background-color: rgb(158, 158, 158);
   cursor: pointer;
   text-align: center;
   pointer-events: auto;
@@ -372,8 +426,8 @@ export default {
   box-shadow: 0 0.2em rgb(110, 110, 110);
   cursor: pointer;
 }
-.btn-del:active{
-   box-shadow: none;
+.btn-del:active {
+  box-shadow: none;
   position: relative;
   top: 0.2em;
 }
@@ -396,7 +450,7 @@ export default {
   box-shadow: 0 0.2em rgb(110, 110, 110);
   cursor: pointer;
 }
-.btn:active{
+.btn:active {
   box-shadow: none;
   position: relative;
   top: 0.2em;
